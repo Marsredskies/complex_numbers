@@ -2,6 +2,19 @@ package main
 
 import "testing"
 
+func TestPrinting(t *testing.T) {
+	op := "test"
+	number := cmplx{real: 1.2000, img: 3.5000}
+
+	got := Print(op, number)
+	want := "test: real: 1.2, imaginary: 3.5"
+
+	if got != want {
+		t.Errorf("got %v, want %v", got, want)
+	}
+
+}
+
 func TestRoundFloat(t *testing.T) {
 	val := 4.200000011234
 	got := RoundFloat(val)
